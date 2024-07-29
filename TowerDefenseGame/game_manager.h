@@ -25,20 +25,20 @@ class GameManager : public Manager<GameManager>
 	friend class Manager<GameManager>;
 
 public:
-	int run(int argc, char** argv);
+	int run(int argc, char** argv); //运行程序
 
 protected:
 	GameManager();
 	~GameManager();
 
 private:
-	SDL_Event event;
-	bool is_quit = false;
+	SDL_Event event; //事件
+	bool is_quit = false; //是否退出
 
 	StatusBar status_bar;
 
-	SDL_Window* window = nullptr;
-	SDL_Renderer* renderer = nullptr;
+	SDL_Window* window = nullptr;		//游戏窗口
+	SDL_Renderer* renderer = nullptr;	//渲染器
 
 	SDL_Texture* tex_tile_map = nullptr;
 
@@ -47,7 +47,7 @@ private:
 	Banner* banner = nullptr;
 
 private:
-	void init_assert(bool flag, const char* err_msg);
+	void init_assert(bool flag, const char* err_msg); //判断是否初始化成功
 
 	void on_input();
 	void on_update(double delta);

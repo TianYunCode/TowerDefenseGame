@@ -2,13 +2,22 @@
 
 GameManager::GameManager()
 {
-	init_assert(!SDL_Init(SDL_INIT_EVERYTHING), u8"SDL2 初始化失败！");
-	init_assert(IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG), u8"SDL_imgae 初始化失败！");
-	init_assert(Mix_Init(MIX_INIT_MP3), u8"SDL_mixer 初始化失败！");
-	init_assert(!TTF_Init(), u8"SDL_ttf 初始化失败！");
+	//初始化第三方库
+	init_assert(!SDL_Init(SDL_INIT_EVERYTHING), u8"SDL2 初始化失败！");             //初始化SDL2
+	init_assert(IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG), u8"SDL_imgae 初始化失败！"); //初始化SDL_imgae
+	init_assert(Mix_Init(MIX_INIT_MP3), u8"SDL_mixer 初始化失败！");                //初始化SDL_mixer
+	init_assert(!TTF_Init(), u8"SDL_ttf 初始化失败！");                             //初始化SDL_ttf
 
+	//初始化音频
+	//44100------------------频率（以赫兹为单位）播放音频
+	//MIX_DEFAULT_FORMAT-----默认音频格式
+	//2----------------------通道数量（1是单声道，2是立体声等）
+	//2048-------------------样本框架中的块大小音频缓冲区大小（总样本除以通道计数）
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 
+	//设置提示（给SDL提供建议）
+	//SDL_HINT_IME_SHOW_UI-----控制某些IME是否应显示本机Ul组件（如候选列表）而不是抑制它们的变量
+	//"1"----------------------SDL_HINT_IME_SHOW_UI变量的值
 	SDL_SetHint(SDL_HINT_IME_SHOW_UI, "1");
 
 	ConfigManager* config = ConfigManager::instance();
@@ -17,12 +26,24 @@ GameManager::GameManager()
 	init_assert(config->load_level_config("level.json"), u8"加载关卡配置失败！");
 	init_assert(config->load_game_config("config.json"), u8"加载游戏配置失败！");
 
+	//创建窗口
+	//config->basic_template.window_title.c_str()-----窗口标题
+	//SDL_WINDOWPOS_CENTERED--------------------------窗口居中
+	//config->basic_template.window_width-------------窗口宽度
+	//config->basic_template.window_height------------窗口高度
+	//SDL_WINDOW_SHOWN--------------------------------显示窗口
 	window = SDL_CreateWindow(config->basic_template.window_title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 		config->basic_template.window_width, config->basic_template.window_height, SDL_WINDOW_SHOWN);
-	init_assert(window, u8"创建游戏窗口失败！");
+	init_assert(window, u8"创建游戏窗口失败！"); //断言窗口是否创建成功
 
+	//创建渲染器
+	//window-------------------------游戏窗口
+	//-1-----------------------------初始化的渲染驱动程序的索引，-1表示以初始化支持请求标志的第一个
+	//SDL_RENDERER_ACCELERATED-------渲染器加速（硬件加速）
+	//SDL_RENDERER_PRESENTVSYNC------垂直同步
+	//SDL_RENDERER_TARGETTEXTURE-----目标纹理
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE);
-	init_assert(renderer, u8"创建渲染器失败！");
+	init_assert(renderer, u8"创建渲染器失败！");//断言渲染器是否创建成功
 
 	init_assert(ResourcesManager::instance()->load_from_file(renderer), u8"加载游戏资源失败！");
 
@@ -37,41 +58,53 @@ GameManager::GameManager()
 
 GameManager::~GameManager()
 {
-	SDL_DestroyRenderer(renderer);
-	SDL_DestroyWindow(window);
+	SDL_DestroyRenderer(renderer); //销毁渲染器
+	SDL_DestroyWindow(window); //销毁窗口
 
-	TTF_Quit();
-	Mix_Quit();
-	IMG_Quit();
-	SDL_Quit();
+	TTF_Quit(); //退出TTF库
+	Mix_Quit(); //退出Mix库
+	IMG_Quit(); //退出IMG库
+	SDL_Quit(); //退出SDL库
 }
 
 int GameManager::run(int argc, char** argv)
 {
 	Mix_FadeInMusic(ResourcesManager::instance()->get_music_pool().find(ResID::Music_BGM)->second, -1, 1500);
 
+	//获取高分辨率计数器的当前值
 	Uint64 last_counter = SDL_GetPerformanceCounter();
+	//获取高分辨率计数器的每秒计数
 	const Uint64 counter_freq = SDL_GetPerformanceFrequency();
 
+	//如果游戏没有退出
 	while (!is_quit)
 	{
+		//获取事件
 		while (SDL_PollEvent(&event))
 		{
 			on_input();
 		}
 
+		////获取高分辨率计数器的当前值
 		Uint64 current_counter = SDL_GetPerformanceCounter();
+		//获取帧间隔
 		double delta = (double)(current_counter - last_counter) / counter_freq;
 		last_counter = current_counter;
+		//让游戏稳定在60帧
 		if (delta * 1000 < 1000.0 / 60) SDL_Delay((Uint32)(1000.0 / 60 - delta * 1000));
 
+		//更新数据
 		on_update(delta);
 
+		//以纯黑清空窗口
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		//情况上一帧的内容
 		SDL_RenderClear(renderer);
 
+		//绘制画面
 		on_render();
 
+		//刷新
 		SDL_RenderPresent(renderer);
 	}
 
@@ -82,6 +115,11 @@ void GameManager::init_assert(bool flag, const char* err_msg)
 {
 	if (flag) return;
 
+	//弹出一个消息框
+	//SDL_MESSAGEBOX_ERROR-----表示是一个error提示框
+	//u8"游戏启动失败"----------窗口标题
+	//err_msg------------------消息文本
+	//window-------------------指定父窗口，设置为NULL表示为非模态窗口
 	SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, u8"游戏启动失败", err_msg, window);
 	exit(-1);
 }
