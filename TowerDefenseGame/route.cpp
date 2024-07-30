@@ -8,8 +8,10 @@ Route::Route(const TileMap& map, const SDL_Point& idx_origin)
 
 	while (true)
 	{
+		//超出地图边界
 		if (idx_next.x >= width_map || idx_next.y >= height_map) break;
 
+		//遇到重复的单元格
 		if (check_duplicate_idx(idx_next))
 		{
 			break;
@@ -22,6 +24,7 @@ Route::Route(const TileMap& map, const SDL_Point& idx_origin)
 		bool is_next_dir_exist = true;
 		const Tile& tile = map[idx_next.y][idx_next.x];
 
+		//遇到房屋
 		if (tile.special_flag == 0) break;
 
 		switch (tile.direction)
@@ -43,6 +46,7 @@ Route::Route(const TileMap& map, const SDL_Point& idx_origin)
 			break;
 		}
 
+		//走到尽头
 		if (!is_next_dir_exist) break;
 	}
 }

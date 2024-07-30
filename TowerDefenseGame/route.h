@@ -6,6 +6,7 @@
 #include <SDL.h>
 #include <vector>
 
+//Â·¾¶Àà
 class Route
 {
 public:
@@ -25,4 +26,4 @@ private:
 	bool check_duplicate_idx(const SDL_Point& target_idx);
 };
 
-#endif // !_ROUTE_H_
+#endif

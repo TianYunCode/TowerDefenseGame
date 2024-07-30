@@ -10,16 +10,18 @@
 #include <sstream>
 #include <unordered_map>
 
+//地图类
 class Map
 {
 public:
+	//刷怪点的路径池 每个刷怪点都有自己的行进路径
 	typedef std::unordered_map<int, Route> SpawnerRoutePool;
 
 public:
 	Map() = default;
 	~Map() = default;
 
-	bool load(const std::string& path);
+	bool load(const std::string& path);	//加载地图文件
 	
 	size_t get_width() const;
 	size_t get_height() const;
@@ -31,12 +33,12 @@ public:
 	void place_tower(const SDL_Point& idx_tile);
 
 private:
-	TileMap tile_map;
+	TileMap tile_map;	//瓦片数组
 	SDL_Point idx_home = { 0 };
 	SpawnerRoutePool spwaner_route_pool;
 
 private:
-	std::string trim_str(const std::string& str);
+	std::string trim_str(const std::string& str);//清除字符串的首尾空格
 	void load_tile_from_string(Tile& tile, const std::string& str);
 	void generate_map_cache();
 };
