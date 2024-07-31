@@ -3,6 +3,8 @@
 
 #include <vector>
 
+using namespace std;
+
 //瓦片尺寸
 #define SIZE_TILE 48
 
@@ -27,6 +29,6 @@ struct Tile
 };
 
 //二维数组，用于表示地图
-typedef std::vector<std::vector<Tile>> TileMap;
+typedef vector<vector<Tile>> TileMap;
 
 #endif

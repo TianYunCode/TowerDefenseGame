@@ -237,7 +237,7 @@ bool GameManager::generate_tile_map_texture()
 
 	int width_tex_tile_set, height_tex_tile_set;
 	SDL_QueryTexture(tex_tile_set, nullptr, nullptr, &width_tex_tile_set, &height_tex_tile_set);
-	int num_tile_single_line = (int)std::ceil((double)width_tex_tile_set / SIZE_TILE);
+	int num_tile_single_line = (int)ceil((double)width_tex_tile_set / SIZE_TILE);
 
 	int width_tex_tile_map, height_tex_tile_map;
 	width_tex_tile_map = (int)map.get_width() * SIZE_TILE;
@@ -317,8 +317,8 @@ bool GameManager::get_cursor_idx_tile(SDL_Point& idx_tile_selected, int screen_x
 	if (screen_x < rect_tile_map.x || screen_x > rect_tile_map.x + rect_tile_map.w
 		|| screen_y	 < rect_tile_map.y || screen_y > rect_tile_map.x + rect_tile_map.h) return false;
 
-	idx_tile_selected.x = std::min((screen_x - rect_tile_map.x) / SIZE_TILE, (int)map.get_width() - 1);
-	idx_tile_selected.y = std::min((screen_y - rect_tile_map.y) / SIZE_TILE, (int)map.get_height() - 1);
+	idx_tile_selected.x = min((screen_x - rect_tile_map.x) / SIZE_TILE, (int)map.get_width() - 1);
+	idx_tile_selected.y = min((screen_y - rect_tile_map.y) / SIZE_TILE, (int)map.get_height() - 1);
 
 	return true;
 }

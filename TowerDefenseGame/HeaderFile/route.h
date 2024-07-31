@@ -10,7 +10,7 @@
 class Route
 {
 public:
-	typedef std::vector<SDL_Point> IdxList;
+	typedef vector<SDL_Point> IdxList;
 
 public:
 	Route() = default;

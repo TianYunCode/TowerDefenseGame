@@ -12,7 +12,7 @@
 class Enemy
 {
 public:
-	typedef std::function<void(Enemy* enemy)> SkillCallback;
+	typedef function<void(Enemy* enemy)> SkillCallback;
 
 public:
 	Enemy();

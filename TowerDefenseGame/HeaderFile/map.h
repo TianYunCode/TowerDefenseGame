@@ -15,13 +15,13 @@ class Map
 {
 public:
 	//刷怪点的路径池 每个刷怪点都有自己的行进路径
-	typedef std::unordered_map<int, Route> SpawnerRoutePool;
+	typedef unordered_map<int, Route> SpawnerRoutePool;
 
 public:
 	Map() = default;
 	~Map() = default;
 
-	bool load(const std::string& path);	//加载地图文件
+	bool load(const string& path);	//加载地图文件
 	
 	size_t get_width() const;
 	size_t get_height() const;
@@ -30,7 +30,7 @@ public:
 	const SDL_Point& get_idx_home() const;
 	const SpawnerRoutePool& get_idx_spawner_pool() const;
 
-	void place_tower(const SDL_Point& idx_tile);
+	void place_tower(const SDL_Point& idx_tile); //放置防御塔
 
 private:
 	TileMap tile_map;	//瓦片数组
@@ -38,8 +38,8 @@ private:
 	SpawnerRoutePool spwaner_route_pool;
 
 private:
-	std::string trim_str(const std::string& str);//清除字符串的首尾空格
-	void load_tile_from_string(Tile& tile, const std::string& str);
+	string trim_str(const string& str);//清除字符串的首尾空格
+	void load_tile_from_string(Tile& tile, const string& str);
 	void generate_map_cache();
 };
 

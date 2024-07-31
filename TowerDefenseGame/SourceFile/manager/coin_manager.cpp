@@ -32,7 +32,7 @@ void CoinManager::on_update(double delta)
 		coin_prop->on_update(delta);
 	}
 
-	coin_prop_list.erase(std::remove_if(coin_prop_list.begin(), coin_prop_list.end(),
+	coin_prop_list.erase(remove_if(coin_prop_list.begin(), coin_prop_list.end(),
 		[](CoinProp* coin_prop)
 		{
 			bool deletable = coin_prop->can_remove();

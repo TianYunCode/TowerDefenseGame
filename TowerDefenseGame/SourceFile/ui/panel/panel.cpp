@@ -112,7 +112,7 @@ void Panel::on_update(SDL_Renderer* renderer)
 	SDL_DestroyTexture(tex_text_foreground);
 	tex_text_foreground = nullptr;
 
-	std::string str_val = val < 0 ? "MAX" : std::to_string(val);
+	string str_val = val < 0 ? "MAX" : to_string(val);
 	SDL_Surface* suf_text_background = TTF_RenderText_Blended(font, str_val.c_str(), color_text_background);
 	SDL_Surface* suf_text_foreground = TTF_RenderText_Blended(font, str_val.c_str(), color_text_foreground);
 

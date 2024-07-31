@@ -4,7 +4,7 @@ ArrowBullet::ArrowBullet()
 {
 	static SDL_Texture* tex_arrow = ResourcesManager::instance()->get_texture_pool().find(ResID::Tex_BulletArrow)->second;
 
-	static const std::vector<int> idx_list = { 0, 1 };
+	static const vector<int> idx_list = { 0, 1 };
 
 	animation.set_loop(true);
 	animation.set_interval(0.1);

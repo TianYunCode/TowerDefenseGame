@@ -7,10 +7,10 @@ SkeletonEnemy::SkeletonEnemy()
 	static SDL_Texture* tex_skeleton_sketch = texture_pool.find(ResID::Tex_SkeletonSketch)->second;
 	static ConfigManager::EnemyTemplate& skeleton_template = ConfigManager::instance()->skeleton_template;
 
-	static const std::vector<int> idx_list_up = { 5, 6, 7, 8, 9 };
-	static const std::vector<int> idx_list_down = { 0, 1, 2, 3, 4 };
-	static const std::vector<int> idx_list_left = { 15, 16, 17, 18, 19 };
-	static const std::vector<int> idx_list_right = { 10, 11, 12, 13, 14 };
+	static const vector<int> idx_list_up = { 5, 6, 7, 8, 9 };
+	static const vector<int> idx_list_down = { 0, 1, 2, 3, 4 };
+	static const vector<int> idx_list_left = { 15, 16, 17, 18, 19 };
+	static const vector<int> idx_list_right = { 10, 11, 12, 13, 14 };
 
 	anim_up.set_loop(true); anim_up.set_interval(0.15);
 	anim_up.set_frame_data(tex_skeleton, 5, 4, idx_list_up);

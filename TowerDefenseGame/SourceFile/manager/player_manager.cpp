@@ -9,7 +9,7 @@ PlayerManager::PlayerManager()
 		[&]()
 		{
 			double interval = ConfigManager::instance()->player_template.skill_interval;
-			mp = std::min(mp + 100 / (interval / 0.1), 100.0);
+			mp = min(mp + 100 / (interval / 0.1), 100.0);
 		}
 	);
 

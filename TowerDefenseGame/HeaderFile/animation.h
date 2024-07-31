@@ -10,7 +10,7 @@
 class Animation
 {
 public:
-	typedef std::function<void()> PlayCallback;
+	typedef function<void()> PlayCallback;
 
 public:
 	Animation();
@@ -18,7 +18,7 @@ public:
 
 	void reset();
 
-	void set_frame_data(SDL_Texture* texture, int num_h, int num_v, const std::vector<int>& idx_list);
+	void set_frame_data(SDL_Texture* texture, int num_h, int num_v, const vector<int>& idx_list);
 	void set_loop(bool is_loop);
 	void set_interval(double interval);
 	void set_on_finished(PlayCallback on_finished);
@@ -40,7 +40,7 @@ private:
 	size_t idx_frame = 0;
 	PlayCallback on_finished;
 	SDL_Texture* texture = nullptr;
-	std::vector<SDL_Rect> rect_src_list;
+	vector<SDL_Rect> rect_src_list;
 	int width_frame = 0, height_frame = 0;
 };
 

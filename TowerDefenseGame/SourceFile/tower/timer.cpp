@@ -16,7 +16,7 @@ void Timer::set_one_shot(bool flag)
 	one_shot = false;
 }
 
-void Timer::set_on_timeout(std::function<void()> on_timeout)
+void Timer::set_on_timeout(function<void()> on_timeout)
 {
 	this->on_timeout = on_timeout;
 }

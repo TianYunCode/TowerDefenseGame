@@ -6,7 +6,7 @@ void Bullet::set_velocity(const Vector2& velocity)
 
 	if (can_rotated)
 	{
-		double randian = std::atan2(velocity.y, velocity.x);
+		double randian = atan2(velocity.y, velocity.x);
 		angle_anim_rotated = randian * 180 / 3.14159265;
 	}
 }

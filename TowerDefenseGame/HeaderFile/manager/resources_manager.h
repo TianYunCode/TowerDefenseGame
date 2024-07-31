@@ -8,6 +8,8 @@
 #include <SDL_mixer.h>
 #include <unordered_map>
 
+using namespace std;
+
 enum class ResID
 {
 	Tex_Tileset,
@@ -95,10 +97,10 @@ class ResourcesManager : public Manager<ResourcesManager>
 	friend class Manager<ResourcesManager>;
 
 public:
-	typedef std::unordered_map<ResID, TTF_Font*> FontPool;
-	typedef std::unordered_map<ResID, Mix_Chunk*> SoundPool;
-	typedef std::unordered_map<ResID, Mix_Music*> MusicPool;
-	typedef std::unordered_map<ResID, SDL_Texture*> TexturePool;
+	typedef unordered_map<ResID, TTF_Font*> FontPool;
+	typedef unordered_map<ResID, Mix_Chunk*> SoundPool;
+	typedef unordered_map<ResID, Mix_Music*> MusicPool;
+	typedef unordered_map<ResID, SDL_Texture*> TexturePool;
 
 public:
 	bool load_from_file(SDL_Renderer* renderer);

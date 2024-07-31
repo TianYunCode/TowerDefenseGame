@@ -2,7 +2,7 @@
 
 WaveManager::WaveManager()
 {
-	static const std::vector<Wave>& wave_list = ConfigManager::instance()->wave_list;
+	static const vector<Wave>& wave_list = ConfigManager::instance()->wave_list;
 
 	timer_start_wave.set_one_shot(true);
 	timer_start_wave.set_wait_time(wave_list[0].interval);
@@ -21,7 +21,7 @@ WaveManager::WaveManager()
 	(
 		[&]()
 		{
-			const std::vector<Wave::SpawnEvent>& spawn_event_list = wave_list[idx_wave].spawn_event_list;
+			const vector<Wave::SpawnEvent>& spawn_event_list = wave_list[idx_wave].spawn_event_list;
 			const Wave::SpawnEvent& spawn_event = spawn_event_list[idx_spawn_event];
 
 			EnemyManager::instance()->spawn_enemy(spawn_event.enemy_type, spawn_event.spawn_point);

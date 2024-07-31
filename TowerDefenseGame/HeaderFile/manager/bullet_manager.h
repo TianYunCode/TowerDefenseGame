@@ -15,7 +15,7 @@ class BulletManager : public Manager<BulletManager>
 	friend class Manager<BulletManager>;
 
 public:
-	typedef std::vector<Bullet*> BulletList;
+	typedef vector<Bullet*> BulletList;
 
 public:
 	void on_update(double delta);

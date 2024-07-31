@@ -15,7 +15,7 @@ void BulletManager::on_update(double delta)
 		bullet->on_update(delta);
 	}
 
-	bullet_list.erase(std::remove_if
+	bullet_list.erase(remove_if
 	(
 		bullet_list.begin(), bullet_list.end(),
 		[](const Bullet* bullet)

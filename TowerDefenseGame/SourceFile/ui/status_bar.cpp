@@ -14,7 +14,7 @@ void StatusBar::on_update(SDL_Renderer* renderer)
 	SDL_DestroyTexture(tex_text_foreground);
 	tex_text_foreground = nullptr;
 
-	std::string str_val = std::to_string((int)CoinManager::instance()->get_current_coin_num());
+	string str_val = to_string((int)CoinManager::instance()->get_current_coin_num());
 	SDL_Surface* suf_text_background = TTF_RenderText_Blended(font, str_val.c_str(), color_text_background);
 	SDL_Surface* suf_text_foreground = TTF_RenderText_Blended(font, str_val.c_str(), color_text_foreground);
 

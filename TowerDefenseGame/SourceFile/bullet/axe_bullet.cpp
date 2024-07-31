@@ -4,7 +4,7 @@ AxeBullet::AxeBullet()
 {
 	static SDL_Texture* tex_axe = ResourcesManager::instance()->get_texture_pool().find(ResID::Tex_BulletAxe)->second;
 
-	static const std::vector<int> idx_list = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+	static const vector<int> idx_list = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
 
 	animation.set_loop(true);
 	animation.set_interval(0.1);

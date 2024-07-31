@@ -4,6 +4,7 @@
 #include "bullet.h"
 #include "../manager/resources_manager.h"
 
+
 class ArrowBullet : public Bullet
 {
 public:

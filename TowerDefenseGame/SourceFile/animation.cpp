@@ -24,7 +24,7 @@ void Animation::reset()
 	idx_frame = 0;
 }
 
-void Animation::set_frame_data(SDL_Texture* texture, int num_h, int num_v, const std::vector<int>& idx_list)
+void Animation::set_frame_data(SDL_Texture* texture, int num_h, int num_v, const vector<int>& idx_list)
 {
 	int width_tex, height_tex;
 

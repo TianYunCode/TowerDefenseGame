@@ -3,6 +3,8 @@
 
 #include <functional>
 
+using namespace std;
+
 class Timer
 {
 public:
@@ -13,7 +15,7 @@ public:
 
 	void set_wait_time(double val);
 	void set_one_shot(bool flag);
-	void set_on_timeout(std::function<void()> on_timeout);
+	void set_on_timeout(function<void()> on_timeout);
 
 	void pause();
 	void resume();
@@ -26,7 +28,7 @@ private:
 	bool paused = false;
 	bool shotted = false;
 	bool one_shot = false;
-	std::function<void()> on_timeout;
+	function<void()> on_timeout;
 };
 
 #endif

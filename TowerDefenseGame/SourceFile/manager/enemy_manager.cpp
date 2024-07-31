@@ -177,7 +177,7 @@ void EnemyManager::process_bullet_collision()
 
 void EnemyManager::remove_invalid_enemy()
 {
-	enemy_list.erase(std::remove_if(enemy_list.begin(), enemy_list.end(),
+	enemy_list.erase(remove_if(enemy_list.begin(), enemy_list.end(),
 		[](const Enemy* enemy)
 		{
 			bool deletable = enemy->can_remove();

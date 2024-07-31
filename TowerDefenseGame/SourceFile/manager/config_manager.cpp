@@ -1,12 +1,12 @@
 #include "../../HeaderFile/manager/config_manager.h"
 
-bool ConfigManager::load_level_config(const std::string& path)
+bool ConfigManager::load_level_config(const string& path)
 {
-	std::ifstream file(path);
+	ifstream file(path);
 
 	if (!file.good()) return false;
 
-	std::stringstream str_stream;
+	stringstream str_stream;
 	str_stream << file.rdbuf(); file.close();
 
 	cJSON* json_root = cJSON_Parse(str_stream.str().c_str());
@@ -58,7 +58,7 @@ bool ConfigManager::load_level_config(const std::string& path)
 				cJSON* json_spawn_event_enemy_type = cJSON_GetObjectItem(json_spawn_event, "enemy");
 				if (json_spawn_event_enemy_type && json_spawn_event_enemy_type->type == cJSON_String)
 				{
-					const std::string str_enemy_type = json_spawn_event_enemy_type->valuestring;
+					const string str_enemy_type = json_spawn_event_enemy_type->valuestring;
 					if (str_enemy_type == "Slim")
 					{
 						spawn_event.enemy_type = EnemyType::Slim;
@@ -93,12 +93,12 @@ bool ConfigManager::load_level_config(const std::string& path)
 	return true;
 }
 
-bool ConfigManager::load_game_config(const std::string& path)
+bool ConfigManager::load_game_config(const string& path)
 {
-	std::ifstream file(path);
+	ifstream file(path);
 	if (!file.good()) return false;
 
-	std::stringstream str_stream;
+	stringstream str_stream;
 	str_stream << file.rdbuf(); file.close();
 
 	cJSON* json_root = cJSON_Parse(str_stream.str().c_str());

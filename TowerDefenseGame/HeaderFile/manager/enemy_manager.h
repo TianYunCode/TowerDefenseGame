@@ -21,7 +21,7 @@ class EnemyManager : public Manager<EnemyManager>
 	friend class Manager<EnemyManager>;
 
 public:
-	typedef std::vector<Enemy*> EnemyList;
+	typedef vector<Enemy*> EnemyList;
 
 public:
 	void on_update(double delta);

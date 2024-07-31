@@ -5,8 +5,8 @@ ShellBullet::ShellBullet()
 	static SDL_Texture* tex_shell = ResourcesManager::instance()->get_texture_pool().find(ResID::Tex_BulletShell)->second;
 	static SDL_Texture* tex_explode = ResourcesManager::instance()->get_texture_pool().find(ResID::Tex_EffectExplode)->second;
 
-	static const std::vector<int> idx_list = { 0, 1 };
-	static const std::vector<int> idx_explode_list = { 0, 1, 2, 3, 4 };
+	static const vector<int> idx_list = { 0, 1 };
+	static const vector<int> idx_explode_list = { 0, 1, 2, 3, 4 };
 
 	animation.set_loop(true);
 	animation.set_interval(0.1);

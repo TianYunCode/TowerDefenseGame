@@ -32,7 +32,7 @@ protected:
 	~TowerManager() = default;
 
 private:
-	std::vector<Tower*> tower_list;
+	vector<Tower*> tower_list;
 };
 
 #endif

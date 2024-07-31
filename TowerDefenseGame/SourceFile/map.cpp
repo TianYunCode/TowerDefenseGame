@@ -1,16 +1,16 @@
 #include "../HeaderFile/map.h"
 
-bool Map::load(const std::string& path)
+bool Map::load(const string& path)
 {
-	std::ifstream file(path);
+	ifstream file(path);
 	if (!file.good()) return false;
 
 	TileMap tile_map_temp;
 
 	int idx_x = -1, idx_y = -1;
 
-	std::string str_line;
-	while (std::getline(file, str_line))
+	string str_line;
+	while (getline(file, str_line))
 	{
 		str_line = trim_str(str_line);
 		if (str_line.empty()) continue;
@@ -18,9 +18,9 @@ bool Map::load(const std::string& path)
 		idx_x = -1, idx_y++;
 		tile_map_temp.emplace_back();
 
-		std::string str_tile;
-		std::stringstream str_stream(str_line);
-		while (std::getline(str_stream, str_tile, ','))
+		string str_tile;
+		stringstream str_stream(str_line);
+		while (getline(str_stream, str_tile, ','))
 		{
 			idx_x++;
 			tile_map_temp[idx_y].emplace_back();
@@ -72,32 +72,32 @@ void Map::place_tower(const SDL_Point& idx_tile)
 	tile_map[idx_tile.y][idx_tile.x].has_tower = true;
 }
 
-std::string Map::trim_str(const std::string& str)
+string Map::trim_str(const string& str)
 {
 	size_t begin_idx = str.find_first_not_of(" \t"); //定位到不是空格的位置（字符串头部）
-	if (begin_idx == std::string::npos) return ""; //找不到非空格的位置（str是空字符串或全空格字符串）
+	if (begin_idx == string::npos) return ""; //找不到非空格的位置（str是空字符串或全空格字符串）
 	size_t end_idx = str.find_last_not_of(" \t"); //定位到不是空格的位置（字符串尾部）
 	size_t idx_range = end_idx - begin_idx + 1;
 
 	return str.substr(begin_idx, idx_range);
 }
 
-void Map::load_tile_from_string(Tile& tile, const std::string& str)
+void Map::load_tile_from_string(Tile& tile, const string& str)
 {
-	std::string str_tidy = trim_str(str);
+	string str_tidy = trim_str(str);
 
-	std::string str_value;
-	std::vector<int> values;
-	std::stringstream str_stream(str_tidy);
+	string str_value;
+	vector<int> values;
+	stringstream str_stream(str_tidy);
 
-	while (std::getline(str_stream, str_value, '\\'))
+	while (getline(str_stream, str_value, '\\'))
 	{
 		int value;
 		try
 		{
-			value = std::stoi(str_value);
+			value = stoi(str_value);
 		}
-		catch (const std::invalid_argument&)
+		catch (const invalid_argument&)
 		{
 			value = -1;
 		}

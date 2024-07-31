@@ -12,7 +12,7 @@ class CoinManager : public Manager<CoinManager>
 	friend class Manager<CoinManager>;
 
 public:
-	typedef std::vector<CoinProp*> CoinPropList;
+	typedef vector<CoinProp*> CoinPropList;
 
 public:
 	void increase_coin(double val);
