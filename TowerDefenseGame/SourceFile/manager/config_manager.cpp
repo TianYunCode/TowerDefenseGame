@@ -7,7 +7,8 @@ bool ConfigManager::load_level_config(const string& path)
 	if (!file.good()) return false;
 
 	stringstream str_stream;
-	str_stream << file.rdbuf(); file.close();
+	str_stream << file.rdbuf();
+	file.close();
 
 	cJSON* json_root = cJSON_Parse(str_stream.str().c_str());
 	if (!json_root) return false;

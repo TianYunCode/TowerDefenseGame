@@ -92,19 +92,19 @@ public:
 	const double num_coin_per_prop = 10; //每个道具的硬币
 
 public:
-	bool load_level_config(const string& path);
-	bool load_game_config(const string& path);
+	bool load_level_config(const string& path); //加载关卡波次配置文件 level.json
+	bool load_game_config(const string& path);  //加载角色属性配置文件 config.json
 
 protected:
 	ConfigManager() = default;
 	~ConfigManager() = default;
 
 private:
-	void parse_basic_template(BasicTemplate& tpl, cJSON* json_root);
-	void parse_player_template(PlayerTemplate& tpl, cJSON* json_root);
-	void parse_number_array(double* ary, int max_len, cJSON* json_root);
-	void parse_tower_template(TowerTemplate& tpl, cJSON* json_root);
-	void parse_enemy_template(EnemyTemplate& tpl, cJSON* json_root);
+	void parse_basic_template(BasicTemplate& tpl, cJSON* json_root);	 //解析游戏启动配置
+	void parse_player_template(PlayerTemplate& tpl, cJSON* json_root);	 //解析玩家角色配置
+	void parse_tower_template(TowerTemplate& tpl, cJSON* json_root);	 //解析防御塔配置
+	void parse_enemy_template(EnemyTemplate& tpl, cJSON* json_root);	 //解析敌人配置
+	void parse_number_array(double* ary, int max_len, cJSON* json_root); //解析数字数组
 };
 
 #endif
