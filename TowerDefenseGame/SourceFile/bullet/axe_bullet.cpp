@@ -1,4 +1,4 @@
-#include "../../HeaderFile/bullet/axe_bullet.h"
+#include "axe_bullet.h"
 
 AxeBullet::AxeBullet()
 {

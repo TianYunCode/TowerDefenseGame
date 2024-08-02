@@ -1,7 +1,7 @@
 #ifndef _ANIMATION_H_
 #define _ANIMATION_H_
 
-#include "tower/timer.h"
+#include "timer.h"
 
 #include <SDL.h>
 #include <vector>

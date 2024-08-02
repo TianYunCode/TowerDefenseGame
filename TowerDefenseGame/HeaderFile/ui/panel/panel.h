@@ -1,8 +1,8 @@
 #ifndef _PANEL_H_
 #define _PANEL_H_
 
-#include "../../tile.h"
-#include "../../manager/resources_manager.h"
+#include "tile.h"
+#include "resources_manager.h"
 
 #include <SDL.h>
 #include <string>

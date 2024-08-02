@@ -108,12 +108,12 @@ public:
 	typedef unordered_map<ResID, SDL_Texture*> TexturePool; //地图池
 
 public:
-	bool load_from_file(SDL_Renderer* renderer);
+	bool load_from_file(SDL_Renderer* renderer); //加载资源文件
 
-	const FontPool& get_font_pool();
-	const SoundPool& get_sound_pool();
-	const MusicPool& get_music_pool();
-	const TexturePool& get_texture_pool();
+	const FontPool& get_font_pool(); 	   //获取字体池对象
+	const SoundPool& get_sound_pool();	   //获取音效池对象
+	const MusicPool& get_music_pool();	   //获取音乐池对象
+	const TexturePool& get_texture_pool(); //获取地图池对象
 
 protected:
 	ResourcesManager() = default;

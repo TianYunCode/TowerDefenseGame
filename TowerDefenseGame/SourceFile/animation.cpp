@@ -1,4 +1,4 @@
-#include "../HeaderFile/animation.h"
+#include "animation.h"
 
 Animation::Animation()
 {

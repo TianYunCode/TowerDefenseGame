@@ -1,4 +1,4 @@
-#include "../../HeaderFile/tower/timer.h"
+#include "timer.h"
 
 void Timer::restart()
 {

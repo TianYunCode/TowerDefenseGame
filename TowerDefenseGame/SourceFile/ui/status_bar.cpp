@@ -1,4 +1,4 @@
-#include "../../HeaderFile/ui/status_bar.h"
+#include "status_bar.h"
 
 void StatusBar::set_position(int x, int y)
 {

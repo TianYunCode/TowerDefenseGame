@@ -1,10 +1,10 @@
 #ifndef _BULLET_H_
 #define _BULLET_H_
 
-#include "../vector2.h"
-#include "../enemy/enemy.h"
-#include "../animation.h"
-#include "../manager/config_manager.h"
+#include "vector2.h"
+#include "enemy.h"
+#include "animation.h"
+#include "config_manager.h"
 
 class Bullet
 {

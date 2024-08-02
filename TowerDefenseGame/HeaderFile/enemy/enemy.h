@@ -1,11 +1,11 @@
 #ifndef _ENEMY_H_
 #define _ENEMY_H_
 
-#include "../tower/timer.h"
-#include "../route.h"
-#include "../vector2.h"
-#include "../animation.h"
-#include "../manager/config_manager.h"
+#include "timer.h"
+#include "route.h"
+#include "vector2.h"
+#include "animation.h"
+#include "config_manager.h"
 
 #include <functional>
 

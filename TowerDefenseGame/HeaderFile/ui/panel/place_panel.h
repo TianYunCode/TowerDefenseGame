@@ -2,9 +2,9 @@
 #define _PLACE_PANEL_H_
 
 #include "panel.h"
-#include "../../manager/coin_manager.h"
-#include "../../manager/tower_manager.h"
-#include "../../manager/resources_manager.h"
+#include "coin_manager.h"
+#include "tower_manager.h"
+#include "resources_manager.h"
 
 #include <SDL2_gfxPrimitives.h>
 

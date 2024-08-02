@@ -1,4 +1,4 @@
-#include "../../HeaderFile/ui/panel/panel.h"
+#include "panel.h"
 
 Panel::Panel()
 {

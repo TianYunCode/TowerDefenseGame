@@ -1,4 +1,4 @@
-#include "../../HeaderFile/manager/config_manager.h"
+#include "config_manager.h"
 
 bool ConfigManager::load_level_config(const string& path)
 {

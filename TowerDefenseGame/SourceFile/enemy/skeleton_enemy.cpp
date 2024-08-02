@@ -1,4 +1,4 @@
-#include "../../HeaderFile/enemy/skeleton_enemy.h"
+#include "skeleton_enemy.h"
 
 SkeletonEnemy::SkeletonEnemy()
 {

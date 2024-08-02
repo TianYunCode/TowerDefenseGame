@@ -1,10 +1,10 @@
 #ifndef _BANNER_H_
 #define _BANNER_H_
 
-#include "../tower/timer.h"
-#include "../vector2.h"
-#include "../manager/config_manager.h"
-#include "../manager/resources_manager.h"
+#include "timer.h"
+#include "vector2.h"
+#include "config_manager.h"
+#include "resources_manager.h"
 
 #include <SDL.h>
 

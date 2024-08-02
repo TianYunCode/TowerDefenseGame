@@ -1,8 +1,8 @@
 #ifndef _ARCHER_TOWER_H_
 #define _ARCHER_TOWER_H_
 
-#include "../tower.h"
-#include "../manager/resources_manager.h"
+#include "tower.h"
+#include "resources_manager.h"
 
 class ArcherTower : public Tower
 {

@@ -1,7 +1,7 @@
 #ifndef _WAVE_MANAGER_H_
 #define _WAVE_MANAGER_H_
 
-#include "../tower/timer.h"
+#include "timer.h"
 #include "manager.h"
 #include "config_manager.h"
 #include "enemy_manager.h"

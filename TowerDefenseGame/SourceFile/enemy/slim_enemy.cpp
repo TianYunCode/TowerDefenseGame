@@ -1,4 +1,4 @@
-#include "../../HeaderFile/enemy/slim_enemy.h"
+#include "slim_enemy.h"
 
 SlimEnemy::SlimEnemy()
 {

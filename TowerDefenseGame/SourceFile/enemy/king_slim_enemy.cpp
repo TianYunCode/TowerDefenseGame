@@ -1,4 +1,4 @@
-#include "../../HeaderFile/enemy/king_slim_enemy.h"
+#include "king_slim_enemy.h"
 
 KingSlimeEnemy::KingSlimeEnemy()
 {

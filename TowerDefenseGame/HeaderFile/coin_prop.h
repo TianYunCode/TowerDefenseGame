@@ -2,9 +2,9 @@
 #define _COIN_PROP_H_
 
 #include "tile.h"
-#include "tower/timer.h"
+#include "timer.h"
 #include "vector2.h"
-#include "manager/resources_manager.h"
+#include "resources_manager.h"
 
 #include <SDL.h>
 

@@ -1,4 +1,4 @@
-#include "../HeaderFile/coin_prop.h"
+#include "coin_prop.h"
 
 CoinProp::CoinProp()
 {

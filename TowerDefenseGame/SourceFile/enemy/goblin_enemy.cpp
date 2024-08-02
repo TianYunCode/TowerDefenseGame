@@ -1,4 +1,4 @@
-#include "../../HeaderFile/enemy/goblin_enemy.h"
+#include "goblin_enemy.h"
 
 GoblinEnemy::GoblinEnemy()
 {

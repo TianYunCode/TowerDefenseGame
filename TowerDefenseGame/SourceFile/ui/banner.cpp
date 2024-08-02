@@ -1,4 +1,4 @@
-#include "../../HeaderFile/ui/banner.h"
+#include "banner.h"
 
 Banner::Banner()
 {

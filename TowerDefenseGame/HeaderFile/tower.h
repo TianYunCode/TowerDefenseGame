@@ -4,9 +4,9 @@
 #include "facing.h"
 #include "vector2.h"
 #include "animation.h"
-#include "tower/tower_type.h"
-#include "manager/enemy_manager.h"
-#include "manager/bullet_manager.h"
+#include "tower_type.h"
+#include "enemy_manager.h"
+#include "bullet_manager.h"
 
 class Tower
 {

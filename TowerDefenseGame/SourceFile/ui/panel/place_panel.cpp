@@ -1,4 +1,4 @@
-#include "../../HeaderFile/ui/panel/place_panel.h"
+#include "place_panel.h"
 
 PlacePanel::PlacePanel()
 {

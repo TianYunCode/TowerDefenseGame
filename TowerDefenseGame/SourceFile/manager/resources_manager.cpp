@@ -1,4 +1,4 @@
-#include "../../HeaderFile/manager/resources_manager.h"
+#include "resources_manager.h"
 
 bool ResourcesManager::load_from_file(SDL_Renderer* renderer)
 {

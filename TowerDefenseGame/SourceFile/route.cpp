@@ -1,4 +1,4 @@
-#include "../HeaderFile/route.h"
+#include "route.h"
 
 Route::Route(const TileMap& map, const SDL_Point& idx_origin)
 {

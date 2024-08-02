@@ -1,4 +1,4 @@
-#include "../HeaderFile/vector2.h"
+#include "vector2.h"
 
 Vector2::Vector2(double x, double y) : x(x), y(y)
 {

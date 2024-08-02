@@ -1,12 +1,12 @@
 #ifndef _BULLET_MANAGER_H_
 #define _BULLET_MANAGER_H_
 
-#include "../bullet/bullet.h"
+#include "bullet.h"
 #include "manager.h"
-#include "../bullet/arrow_bullet.h"
-#include "../bullet/axe_bullet.h"
-#include "../bullet/shell_bullet.h"
-#include "../bullet/bullet_type.h"
+#include "arrow_bullet.h"
+#include "axe_bullet.h"
+#include "shell_bullet.h"
+#include "bullet_type.h"
 
 #include <vector>
 

@@ -1,4 +1,4 @@
-#include "../../HeaderFile/ui/panel/upgrade_panel.h"
+#include "upgrade_panel.h"
 
 UpgradePanel::UpgradePanel()
 {

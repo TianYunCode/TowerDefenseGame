@@ -1,4 +1,4 @@
-#include "../HeaderFile/map.h"
+#include "map.h"
 
 bool Map::load(const string& path)
 {

@@ -1,7 +1,7 @@
 #ifndef _GAME_MANAGER_H_
 #define _GAME_MANAGER_H_
 
-#include "../ui/banner.h"
+#include "banner.h"
 #include "manager.h"
 #include "config_manager.h"
 #include "enemy_manager.h"
@@ -9,10 +9,10 @@
 #include "resources_manager.h"
 #include "tower_manager.h"
 #include "bullet_manager.h"
-#include "../ui/status_bar.h"
-#include "../ui/panel/panel.h"
-#include "../ui/panel/place_panel.h"
-#include "../ui/panel/upgrade_panel.h"
+#include "status_bar.h"
+#include "panel.h"
+#include "place_panel.h"
+#include "upgrade_panel.h"
 #include "player_manager.h"
 
 #include <SDL.h>
@@ -53,7 +53,7 @@ private:
 	void on_update(double delta);
 	void on_render();
 
-	bool generate_tile_map_texture();
+	bool generate_tile_map_texture(); //生成瓦片地图纹理
 	bool check_home(const SDL_Point& idx_tile_selected);
 	bool get_cursor_idx_tile(SDL_Point& idx_tile_selected, int screen_x, int screen_y) const;
 	bool can_place_tower(const SDL_Point& idx_tile_selected) const;

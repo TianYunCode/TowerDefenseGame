@@ -1,8 +1,8 @@
 #ifndef _CONFIG_MANAGER_H_
 #define _CONFIG_MANAGER_H_
 
-#include "../map.h"
-#include "../wave.h"
+#include "map.h"
+#include "wave.h"
 #include "manager.h"
 
 #include <SDL.h>

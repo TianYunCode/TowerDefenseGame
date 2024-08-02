@@ -1,4 +1,4 @@
-#include "../../HeaderFile/tower/archer_tower.h"
+#include "archer_tower.h"
 
 ArcherTower::ArcherTower()
 {

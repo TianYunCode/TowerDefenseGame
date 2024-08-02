@@ -1,4 +1,4 @@
-#include "../../HeaderFile/bullet/shell_bullet.h"
+#include "shell_bullet.h"
 
 ShellBullet::ShellBullet()
 {

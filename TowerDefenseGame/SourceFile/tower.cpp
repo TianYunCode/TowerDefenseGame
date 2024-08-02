@@ -1,4 +1,4 @@
-#include "../HeaderFile/tower.h"
+#include "tower.h"
 
 Tower::Tower()
 {

@@ -1,4 +1,4 @@
-#include "../../HeaderFile/tower/axeman_tower.h"
+#include "axeman_tower.h"
 
 AxemanTower::AxemanTower()
 {

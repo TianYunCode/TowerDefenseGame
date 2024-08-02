@@ -2,7 +2,7 @@
 #define _SHELL_BULLET_H_
 
 #include "bullet.h"
-#include "../manager/resources_manager.h"
+#include "resources_manager.h"
 
 class ShellBullet : public Bullet
 {

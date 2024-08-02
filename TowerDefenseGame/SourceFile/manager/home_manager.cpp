@@ -1,4 +1,4 @@
-#include "../../HeaderFile/manager/home_manager.h"
+#include "home_manager.h"
 
 HomeManager::HomeManager()
 {

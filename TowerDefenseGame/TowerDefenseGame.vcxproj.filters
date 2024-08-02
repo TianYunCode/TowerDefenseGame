@@ -19,9 +19,6 @@
     <Filter Include="头文件\enemy">
       <UniqueIdentifier>{2338cb58-d79e-4962-b0c3-f78c9c666379}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\cJSON">
-      <UniqueIdentifier>{5c300dd9-5ff3-4d57-83b6-0e6930b7f26c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\bullet">
       <UniqueIdentifier>{4e73c0b6-fd55-483a-8f6f-885ded85829b}</UniqueIdentifier>
     </Filter>
@@ -65,9 +62,6 @@
     </ClCompile>
     <ClCompile Include="SourceFile\bullet\shell_bullet.cpp">
       <Filter>源文件\bullet</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFile\cJSON\cJSON.c">
-      <Filter>源文件\cJSON</Filter>
     </ClCompile>
     <ClCompile Include="SourceFile\enemy\enemy.cpp">
       <Filter>源文件\enemy</Filter>
@@ -163,6 +157,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SourceFile\vector2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFile\cJSON.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -291,6 +288,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFile\wave.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFile\cJSON.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

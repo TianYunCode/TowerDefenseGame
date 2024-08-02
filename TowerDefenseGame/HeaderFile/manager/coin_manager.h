@@ -1,7 +1,7 @@
 #ifndef _COIN_MANAGER_H_
 #define _COIN_MANAGER_H_
 
-#include "../coin_prop.h"
+#include "coin_prop.h"
 #include "manager.h"
 #include "config_manager.h"
 

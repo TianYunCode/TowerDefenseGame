@@ -1,17 +1,17 @@
 #ifndef _ENEMY_MANAGER_H_
 #define _ENEMY_MANAGER_H_
 
-#include "../enemy/enemy.h"
+#include "enemy.h"
 #include "manager.h"
 #include "config_manager.h"
 #include "home_manager.h"
-#include "../enemy/slim_enemy.h"
-#include "../enemy/king_slim_enemy.h"
-#include "../enemy/skeleton_enemy.h"
-#include "../enemy/goblin_enemy.h"
-#include "../enemy/goblin_priest_enemy.h"
-#include "../manager/bullet_manager.h"
-#include "../manager/coin_manager.h"
+#include "slim_enemy.h"
+#include "king_slim_enemy.h"
+#include "skeleton_enemy.h"
+#include "goblin_enemy.h"
+#include "goblin_priest_enemy.h"
+#include "bullet_manager.h"
+#include "coin_manager.h"
 
 #include <vector>
 #include <SDL.h>

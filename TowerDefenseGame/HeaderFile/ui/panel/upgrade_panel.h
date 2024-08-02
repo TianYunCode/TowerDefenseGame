@@ -2,8 +2,8 @@
 #define _UPGRADE_PANEL_H_
 
 #include "panel.h"
-#include "../../manager/tower_manager.h"
-#include "../../manager/resources_manager.h"
+#include "tower_manager.h"
+#include "resources_manager.h"
 
 class UpgradePanel : public Panel
 {

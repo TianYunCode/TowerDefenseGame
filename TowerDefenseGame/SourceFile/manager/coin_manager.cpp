@@ -1,4 +1,4 @@
-#include "../../HeaderFile/manager/coin_manager.h"
+#include "coin_manager.h"
 
 CoinManager::CoinManager()
 {

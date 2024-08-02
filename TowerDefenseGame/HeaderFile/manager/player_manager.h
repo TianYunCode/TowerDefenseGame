@@ -1,11 +1,11 @@
 #ifndef _PLAYER_MANAGER_H_
 #define _PLAYER_MANAGER_H_
 
-#include "../tile.h"
-#include "../facing.h"
-#include "../vector2.h"
+#include "tile.h"
+#include "facing.h"
+#include "vector2.h"
 #include "manager.h"
-#include "../animation.h"
+#include "animation.h"
 #include "coin_manager.h"
 #include "enemy_manager.h"
 #include "resources_manager.h"

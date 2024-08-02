@@ -1,10 +1,10 @@
 #ifndef _STATUS_BAR_H_
 #define _STATUS_BAR_H_
 
-#include "../manager/coin_manager.h"
-#include "../manager/home_manager.h"
-#include "../manager/resources_manager.h"
-#include "../manager/player_manager.h"
+#include "coin_manager.h"
+#include "home_manager.h"
+#include "resources_manager.h"
+#include "player_manager.h"
 
 #include <SDL.h>
 #include <string>

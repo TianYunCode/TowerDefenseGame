@@ -120,7 +120,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>..\thirdparty\SDL2\include;..\thirdparty\SDL2_gfx\include;..\thirdparty\SDL2_image\include;..\thirdparty\SDL2_mixer\include;..\thirdparty\SDL2_ttf\include;..\thirdparty\cJSON\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\thirdparty\SDL2\include;..\thirdparty\SDL2_gfx\include;..\thirdparty\SDL2_image\include;..\thirdparty\SDL2_mixer\include;..\thirdparty\SDL2_ttf\include;.\HeaderFile\;.\HeaderFile\bullet;.\HeaderFile\enemy;.\HeaderFile\manager;.\HeaderFile\tower;.\HeaderFile\ui;.\HeaderFile\ui\panel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -138,7 +138,7 @@
     <ClCompile Include="SourceFile\bullet\axe_bullet.cpp" />
     <ClCompile Include="SourceFile\bullet\bullet.cpp" />
     <ClCompile Include="SourceFile\bullet\shell_bullet.cpp" />
-    <ClCompile Include="SourceFile\cJSON\cJSON.c" />
+    <ClCompile Include="SourceFile\cJSON.c" />
     <ClCompile Include="SourceFile\coin_prop.cpp" />
     <ClCompile Include="SourceFile\enemy\enemy.cpp" />
     <ClCompile Include="SourceFile\enemy\goblin_enemy.cpp" />
@@ -178,6 +178,7 @@
     <ClInclude Include="HeaderFile\bullet\bullet.h" />
     <ClInclude Include="HeaderFile\bullet\bullet_type.h" />
     <ClInclude Include="HeaderFile\bullet\shell_bullet.h" />
+    <ClInclude Include="HeaderFile\cJSON.h" />
     <ClInclude Include="HeaderFile\coin_prop.h" />
     <ClInclude Include="HeaderFile\enemy\enemy.h" />
     <ClInclude Include="HeaderFile\enemy\enemy_type.h" />

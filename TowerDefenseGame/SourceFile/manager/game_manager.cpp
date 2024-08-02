@@ -1,4 +1,4 @@
-#include "../../HeaderFile/manager/game_manager.h"
+#include "game_manager.h"
 
 GameManager::GameManager()
 {
@@ -43,9 +43,9 @@ GameManager::GameManager()
 	//SDL_RENDERER_PRESENTVSYNC------垂直同步
 	//SDL_RENDERER_TARGETTEXTURE-----目标纹理
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE);
-	init_assert(renderer, u8"创建渲染器失败！");//断言渲染器是否创建成功
+	init_assert(renderer, u8"创建渲染器失败！"); //断言渲染器是否创建成功
 
-	init_assert(ResourcesManager::instance()->load_from_file(renderer), u8"加载游戏资源失败！");
+	init_assert(ResourcesManager::instance()->load_from_file(renderer), u8"加载游戏资源失败！"); //断言游戏资源是否创建成功
 
 	init_assert(generate_tile_map_texture(), u8"生成瓦片地图纹理失败！");
 
@@ -261,11 +261,7 @@ bool GameManager::generate_tile_map_texture()
 			SDL_Rect rect_src;
 			const Tile& tile = tile_map[y][x];
 
-			const SDL_Rect& rect_dst =
-			{
-				x * SIZE_TILE, y * SIZE_TILE,
-				SIZE_TILE, SIZE_TILE
-			};
+			const SDL_Rect& rect_dst = { x * SIZE_TILE, y * SIZE_TILE, SIZE_TILE, SIZE_TILE };
 
 			rect_src =
 			{

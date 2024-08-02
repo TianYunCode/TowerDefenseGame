@@ -1,4 +1,4 @@
-#include "../../HeaderFile/bullet/bullet.h"
+#include "bullet.h"
 
 void Bullet::set_velocity(const Vector2& velocity)
 {
