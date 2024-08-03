@@ -44,7 +44,7 @@ private:
 	void process_home_collision();
 	void process_bullet_collision();
 	void remove_invalid_enemy();
-	void try_spawn_coin_prop(const Vector2& position, double ratio);
+	void try_spawn_coin_prop(const TwoVector& position, double ratio);
 };
 
 #endif

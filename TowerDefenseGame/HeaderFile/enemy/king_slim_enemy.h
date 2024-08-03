@@ -5,6 +5,7 @@
 #include "config_manager.h"
 #include "resources_manager.h"
 
+//»Ê¼ÒÊ·À³Ä·Àà
 class KingSlimeEnemy : public Enemy
 {
 public:

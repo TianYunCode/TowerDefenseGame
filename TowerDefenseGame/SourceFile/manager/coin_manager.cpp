@@ -60,7 +60,7 @@ CoinManager::CoinPropList& CoinManager::get_coin_prop_list()
 	return coin_prop_list;
 }
 
-void CoinManager::spawn_coin_prop(const Vector2& position)
+void CoinManager::spawn_coin_prop(const TwoVector& position)
 {
 	CoinProp* coin_prop = new CoinProp();
 	coin_prop->set_position(position);

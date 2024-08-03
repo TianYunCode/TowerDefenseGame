@@ -169,7 +169,7 @@
     <ClCompile Include="SourceFile\ui\panel\place_panel.cpp" />
     <ClCompile Include="SourceFile\ui\panel\upgrade_panel.cpp" />
     <ClCompile Include="SourceFile\ui\status_bar.cpp" />
-    <ClCompile Include="SourceFile\vector2.cpp" />
+    <ClCompile Include="SourceFile\two_vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFile\animation.h" />
@@ -213,8 +213,11 @@
     <ClInclude Include="HeaderFile\ui\panel\place_panel.h" />
     <ClInclude Include="HeaderFile\ui\panel\upgrade_panel.h" />
     <ClInclude Include="HeaderFile\ui\status_bar.h" />
-    <ClInclude Include="HeaderFile\vector2.h" />
+    <ClInclude Include="HeaderFile\two_vector.h" />
     <ClInclude Include="HeaderFile\wave.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

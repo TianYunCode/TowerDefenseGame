@@ -64,7 +64,7 @@ void Animation::on_update(double delta)
 	timer.on_update(delta);
 }
 
-//void Animation::on_render(SDL_Renderer* renderer, const SDL_Point& pos_dst, double angle = 0) const
+//void  Animation::on_render(SDL_Renderer* renderer, const SDL_Point& pos_dst, double angle = 0) const
 //{
 //	static SDL_Rect rect_dst;
 //

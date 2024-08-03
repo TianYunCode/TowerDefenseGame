@@ -31,7 +31,7 @@ void EnemyManager::on_render(SDL_Renderer* renderer)
 
 void EnemyManager::spawn_enemy(EnemyType type, int idx_spawn_point)
 {
-	static Vector2 position;
+	static TwoVector position;
 	static const SDL_Rect& rect_tile_map = ConfigManager::instance()->rect_tile_map;
 	static const Map::SpawnerRoutePool& spawner_route_pool = ConfigManager::instance()->map.get_idx_spawner_pool();
 
@@ -69,10 +69,10 @@ void EnemyManager::spawn_enemy(EnemyType type, int idx_spawn_point)
 			double recover_raduis = enemy_src->get_recover_radius();
 			if (recover_raduis < 0) return;
 
-			const Vector2 pos_src = enemy_src->get_position();
+			const TwoVector pos_src = enemy_src->get_position();
 			for (Enemy* enemy_dst : enemy_list)
 			{
-				const Vector2& pos_dst = enemy_dst->get_position();
+				const TwoVector& pos_dst = enemy_dst->get_position();
 				double distance = (pos_dst - pos_src).length();
 				if (distance <= recover_raduis) enemy_dst->increase_hp(enemy_src->get_recover_intensity());
 			}
@@ -103,7 +103,7 @@ void EnemyManager::process_home_collision()
 {
 	static const SDL_Point& idx_home = ConfigManager::instance()->map.get_idx_home();
 	static const SDL_Rect& rect_tile_map = ConfigManager::instance()->rect_tile_map;
-	static const Vector2 position_home_tile =
+	static const TwoVector position_home_tile =
 	{
 		(double)rect_tile_map.x + idx_home.x * SIZE_TILE,
 		(double)rect_tile_map.y + idx_home.y * SIZE_TILE
@@ -113,7 +113,7 @@ void EnemyManager::process_home_collision()
 	{
 		if (enemy->can_remove()) continue;
 
-		const Vector2& position = enemy->get_position();
+		const TwoVector& position = enemy->get_position();
 
 		if (position.x >= position_home_tile.x
 			&& position.y >= position_home_tile.y
@@ -135,14 +135,14 @@ void EnemyManager::process_bullet_collision()
 	{
 		if (enemy->can_remove()) continue;
 
-		const Vector2& size_enemy = enemy->get_size();
-		const Vector2& pos_enemy = enemy->get_position();
+		const TwoVector& size_enemy = enemy->get_size();
+		const TwoVector& pos_enemy = enemy->get_position();
 
 		for (Bullet* bullet : bullet_list)
 		{
 			if (!bullet->can_collide()) continue;
 
-			const Vector2& pos_bullet = bullet->get_position();
+			const TwoVector& pos_bullet = bullet->get_position();
 
 			if (pos_bullet.x >= pos_enemy.x - size_enemy.x / 2
 				&& pos_bullet.y >= pos_enemy.y - size_enemy.y / 2
@@ -160,7 +160,7 @@ void EnemyManager::process_bullet_collision()
 				{
 					for (Enemy* target_enemy : enemy_list)
 					{
-						const Vector2& pos_target_enemy = target_enemy->get_position();
+						const TwoVector& pos_target_enemy = target_enemy->get_position();
 						if ((pos_target_enemy - pos_bullet).length() <= damage_range)
 						{
 							target_enemy->decrease_hp(damage);
@@ -187,7 +187,7 @@ void EnemyManager::remove_invalid_enemy()
 		}), enemy_list.end());
 }
 
-void EnemyManager::try_spawn_coin_prop(const Vector2& position, double ratio)
+void EnemyManager::try_spawn_coin_prop(const TwoVector& position, double ratio)
 {
 	static CoinManager* instance = CoinManager::instance();
 

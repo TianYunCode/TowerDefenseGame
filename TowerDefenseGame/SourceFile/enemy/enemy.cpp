@@ -3,7 +3,7 @@
 Enemy::Enemy()
 {
 	timer_skill.set_one_shot(false);
-	timer_skill.set_on_timeout([&]() { on_skill_released(this); });
+	timer_skill.set_on_timeout([&]() { on_skill_released(this); }); 
 
 	timer_sketch.set_one_shot(true);
 	timer_sketch.set_wait_time(0.075);
@@ -19,8 +19,8 @@ void Enemy::on_update(double delta)
 	timer_sketch.on_update(delta);
 	timer_restore_speed.on_update(delta);
 
-	Vector2 move_distance = velocity * delta;
-	Vector2 target_distance = position_target - position;
+	TwoVector move_distance = velocity * delta;
+	TwoVector target_distance = position_target - position;
 	position += move_distance < target_distance ? move_distance : target_distance;
 
 	if (target_distance.approx_zero())
@@ -67,7 +67,7 @@ void Enemy::on_render(SDL_Renderer* renderer)
 	static SDL_Rect rect;
 	static SDL_Point point;
 	static const int offset_y = 2;
-	static const Vector2 size_hp_bar = { 40, 8 };
+	static const TwoVector size_hp_bar = { 40, 8 };
 	static const SDL_Color color_border = { 116, 185, 124, 255 };
 	static const SDL_Color color_content = { 226, 255, 194, 255 };
 
@@ -124,7 +124,7 @@ void Enemy::slow_down()
 	timer_restore_speed.restart();
 }
 
-void Enemy::set_position(const Vector2& position)
+void Enemy::set_position(const TwoVector& position)
 {
 	this->position = position;
 }
@@ -146,17 +146,17 @@ double Enemy::get_hp() const
 	return hp;
 }
 
-const Vector2& Enemy::get_size() const
+const TwoVector& Enemy::get_size() const
 {
 	return size;
 }
 
-const Vector2& Enemy::get_position() const
+const TwoVector& Enemy::get_position() const
 {
 	return position;
 }
 
-const Vector2& Enemy::get_velocity() const
+const TwoVector& Enemy::get_velocity() const
 {
 	return velocity;
 }

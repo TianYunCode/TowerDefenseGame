@@ -1,6 +1,6 @@
 #include "bullet.h"
 
-void Bullet::set_velocity(const Vector2& velocity)
+void Bullet::set_velocity(const TwoVector& velocity)
 {
 	this->velocity = velocity;
 
@@ -11,7 +11,7 @@ void Bullet::set_velocity(const Vector2& velocity)
 	}
 }
 
-void Bullet::set_position(const Vector2& position)
+void Bullet::set_position(const TwoVector& position)
 {
 	this->position = position;
 }
@@ -21,12 +21,12 @@ void Bullet::set_damage(double damage)
 	this->damage = damage;
 }
 
-const Vector2& Bullet::get_size() const
+const TwoVector& Bullet::get_size() const
 {
 	return size;
 }
 
-const Vector2& Bullet::get_position() const
+const TwoVector& Bullet::get_position() const
 {
 	return position;
 }

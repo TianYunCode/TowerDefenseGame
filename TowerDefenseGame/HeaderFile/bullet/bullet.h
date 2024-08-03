@@ -1,7 +1,7 @@
 #ifndef _BULLET_H_
 #define _BULLET_H_
 
-#include "vector2.h"
+#include "two_vector.h"
 #include "enemy.h"
 #include "animation.h"
 #include "config_manager.h"
@@ -12,12 +12,12 @@ public:
 	Bullet() = default;
 	~Bullet() = default;
 
-	void set_velocity(const Vector2& velocity);
-	void set_position(const Vector2& position);
+	void set_velocity(const TwoVector& velocity);
+	void set_position(const TwoVector& position);
 	void set_damage(double damage);
 
-	const Vector2& get_size() const;
-	const Vector2& get_position() const;
+	const TwoVector& get_size() const;
+	const TwoVector& get_position() const;
 
 	double get_damage() const;
 	double get_damage_range() const;
@@ -33,9 +33,9 @@ public:
 	virtual void on_collide(Enemy* enemy);
 
 protected:
-	Vector2 size;
-	Vector2 velocity;
-	Vector2 position;
+	TwoVector size;
+	TwoVector velocity;
+	TwoVector position;
 
 	Animation animation;
 	bool can_rotated = false;

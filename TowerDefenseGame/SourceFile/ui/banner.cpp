@@ -16,7 +16,7 @@ Banner::Banner()
 	);
 }
 
-void Banner::set_center_position(const Vector2& pos)
+void Banner::set_center_position(const TwoVector& pos)
 {
 	pos_center = pos;
 }

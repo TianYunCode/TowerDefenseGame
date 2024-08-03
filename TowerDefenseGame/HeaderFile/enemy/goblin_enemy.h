@@ -5,6 +5,7 @@
 #include "config_manager.h"
 #include "resources_manager.h"
 
+//∏Á≤º¡÷¿‡
 class GoblinEnemy : public Enemy
 {
 public:

@@ -24,7 +24,7 @@ public:
 	double get_current_coin_num();
 	CoinPropList& get_coin_prop_list();
 
-	void spawn_coin_prop(const Vector2& position);
+	void spawn_coin_prop(const TwoVector& position);
 
 protected:
 	CoinManager();

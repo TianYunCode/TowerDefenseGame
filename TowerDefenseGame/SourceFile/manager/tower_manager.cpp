@@ -99,7 +99,7 @@ void TowerManager::place_tower(TowerType type, const SDL_Point& idx)
 		break;
 	}
 
-	static Vector2 position;
+	static TwoVector position;
 	static const SDL_Rect& rect = ConfigManager::instance()->rect_tile_map;
 
 	position.x = rect.x + idx.x * SIZE_TILE + SIZE_TILE / 2;

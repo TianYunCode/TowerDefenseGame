@@ -156,7 +156,7 @@
     <ClCompile Include="SourceFile\tower.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFile\vector2.cpp">
+    <ClCompile Include="SourceFile\two_vector.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SourceFile\cJSON.c">
@@ -284,7 +284,7 @@
     <ClInclude Include="HeaderFile\tower.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFile\vector2.h">
+    <ClInclude Include="HeaderFile\two_vector.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFile\wave.h">
@@ -293,5 +293,8 @@
     <ClInclude Include="HeaderFile\cJSON.h">
       <Filter>头文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
   </ItemGroup>
 </Project>

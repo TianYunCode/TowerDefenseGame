@@ -41,7 +41,7 @@ BulletManager::BulletList& BulletManager::get_bullet_list()
 	return bullet_list;
 }
 
-void BulletManager::fire_bullet(BulletType type, const Vector2& position, const Vector2& velocity, double damage)
+void BulletManager::fire_bullet(BulletType type, const TwoVector& position, const TwoVector& velocity, double damage)
 {
 	Bullet* bullet = nullptr;
 

@@ -2,7 +2,7 @@
 #define _TOWER_H_
 
 #include "facing.h"
-#include "vector2.h"
+#include "two_vector.h"
 #include "animation.h"
 #include "tower_type.h"
 #include "enemy_manager.h"
@@ -14,16 +14,16 @@ public:
 	Tower();
 	~Tower() = default;
 
-	void set_position(const Vector2& position);
+	void set_position(const TwoVector& position);
 
-	const Vector2& get_size() const;
-	const Vector2& get_position() const;
+	const TwoVector& get_size() const;
+	const TwoVector& get_position() const;
 
 	void on_update(double delta);
 	void on_render(SDL_Renderer* renderer);
 
 protected:
-	Vector2 size;
+	TwoVector size;
 
 	Animation anim_idle_up;
 	Animation anim_idle_down;
@@ -41,7 +41,7 @@ protected:
 
 private:
 	Timer timer_fire;
-	Vector2 position;
+	TwoVector position;
 	bool can_fire = true;
 	Facing facing = Facing::Right;
 	Animation* anim_current = &anim_idle_right;

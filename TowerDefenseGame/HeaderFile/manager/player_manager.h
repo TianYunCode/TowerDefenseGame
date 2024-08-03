@@ -3,7 +3,7 @@
 
 #include "tile.h"
 #include "facing.h"
-#include "vector2.h"
+#include "two_vector.h"
 #include "manager.h"
 #include "animation.h"
 #include "coin_manager.h"
@@ -28,9 +28,9 @@ protected:
 	~PlayerManager() = default;
 
 private:
-	Vector2 size;
-	Vector2 position;
-	Vector2 velocity;
+	TwoVector size;
+	TwoVector position;
+	TwoVector velocity;
 
 	SDL_Rect rect_hitbox_flash = { 0 };
 	SDL_Rect rect_hitbox_impact = { 0 };

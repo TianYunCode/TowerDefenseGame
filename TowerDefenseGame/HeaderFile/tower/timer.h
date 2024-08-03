@@ -5,30 +5,31 @@
 
 using namespace std;
 
+//定时器类
 class Timer
 {
 public:
 	Timer() = default;
 	~Timer() = default;
 
-	void restart();
+	void restart(); //重置定时器状态
 
-	void set_wait_time(double val);
-	void set_one_shot(bool flag);
-	void set_on_timeout(function<void()> on_timeout);
+	void set_wait_time(double val);					  //设置等待时间
+	void set_one_shot(bool flag);					  //设置触发状态
+	void set_on_timeout(function<void()> on_timeout); //设置回调函数
 
-	void pause();
-	void resume();
+	void pause();  //暂停
+	void resume(); //恢复
 
-	void on_update(double delta);
+	void on_update(double delta); //更新
 
 private:
-	double pass_time = 0;
-	double wait_time = 0;
-	bool paused = false;
-	bool shotted = false;
-	bool one_shot = false;
-	function<void()> on_timeout;
+	double pass_time = 0;		 //过去的时间
+	double wait_time = 0;		 //等待的时间
+	bool paused = false;		 //暂停
+	bool shotted = false;		 //是否触发了
+	bool one_shot = false;		 //是否需要单次触发
+	function<void()> on_timeout; //回调函数
 };
 
 #endif

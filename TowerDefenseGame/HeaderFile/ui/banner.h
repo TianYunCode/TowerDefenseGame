@@ -2,7 +2,7 @@
 #define _BANNER_H_
 
 #include "timer.h"
-#include "vector2.h"
+#include "two_vector.h"
 #include "config_manager.h"
 #include "resources_manager.h"
 
@@ -14,7 +14,7 @@ public:
 	Banner();
 	~Banner() = default;
 
-	void set_center_position(const Vector2& pos);
+	void set_center_position(const TwoVector& pos);
 
 	void on_update(double delta);
 	void on_render(SDL_Renderer* renderer);
@@ -22,10 +22,10 @@ public:
 	bool check_end_dispaly();
 
 private:
-	Vector2 pos_center;
+	TwoVector pos_center;
 
-	Vector2 size_foreground;
-	Vector2 size_background;
+	TwoVector size_foreground;
+	TwoVector size_background;
 
 	SDL_Texture* tex_foreground = nullptr;
 	SDL_Texture* tex_background = nullptr;

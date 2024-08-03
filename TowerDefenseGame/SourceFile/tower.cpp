@@ -61,17 +61,17 @@ Tower::Tower()
 	);
 }
 
-void Tower::set_position(const Vector2& position)
+void Tower::set_position(const TwoVector& position)
 {
 	this->position = position;
 }
 
-const Vector2& Tower::get_size() const
+const TwoVector& Tower::get_size() const
 {
 	return size;
 }
 
-const Vector2& Tower::get_position() const
+const TwoVector& Tower::get_position() const
 {
 	return size;
 }
@@ -211,7 +211,7 @@ void Tower::on_fire()
 	timer_fire.set_wait_time(interval);
 	timer_fire.restart();
 
-	Vector2 direction = target_enemy->get_position() - position;
+	TwoVector direction = target_enemy->get_position() - position;
 	BulletManager::instance()->fire_bullet(bullet_type, position, direction.normalize() * fire_speed * SIZE_TILE, damage);
 
 	bool is_show_x_anim = abs(direction.x) >= abs(direction.y);

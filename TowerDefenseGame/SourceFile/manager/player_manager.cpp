@@ -138,7 +138,7 @@ void PlayerManager::on_update(double delta)
 	timer_auto_increase_mp.on_update(delta);
 	timer_release_flash_cd.on_update(delta);
 
-	Vector2 direction = Vector2(is_move_right - is_move_left, is_move_down - is_move_up).normalize();
+	TwoVector direction = TwoVector(is_move_right - is_move_left, is_move_down - is_move_up).normalize();
 	velocity = direction * speed * SIZE_TILE;
 
 	if (!is_releasing_flash && !is_releasing_impact)
@@ -202,7 +202,7 @@ void PlayerManager::on_update(double delta)
 		{
 			if (enemy->can_remove()) continue;
 
-			const Vector2& position = enemy->get_position();
+			const TwoVector& position = enemy->get_position();
 			if (position.x >= rect_hitbox_flash.x
 				&& position.x <= rect_hitbox_flash.x + rect_hitbox_flash.w
 				&& position.y >= rect_hitbox_flash.y
@@ -222,8 +222,8 @@ void PlayerManager::on_update(double delta)
 		{
 			if (enemy->can_remove()) continue;
 
-			const Vector2& size = enemy->get_size();
-			const Vector2& position = enemy->get_position();
+			const TwoVector& size = enemy->get_size();
+			const TwoVector& position = enemy->get_position();
 			if (position.x >= rect_hitbox_impact.x
 				&& position.x <= rect_hitbox_impact.x + rect_hitbox_impact.w
 				&& position.y >= rect_hitbox_impact.y
@@ -242,7 +242,7 @@ void PlayerManager::on_update(double delta)
 	{
 		if (coin_prop->can_remove()) continue;
 
-		const Vector2& pos_coin_prop = coin_prop->get_position();
+		const TwoVector& pos_coin_prop = coin_prop->get_position();
 		if (pos_coin_prop.x >= position.x - size.x / 2
 			&& pos_coin_prop.x <= position.x + size.x / 2
 			&& pos_coin_prop.y >= position.y - size.y / 2

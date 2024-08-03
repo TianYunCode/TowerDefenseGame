@@ -26,17 +26,17 @@ CoinProp::CoinProp()
 	velocity.y = -3 * SIZE_TILE;
 }
 
-void CoinProp::set_position(const Vector2& position)
+void CoinProp::set_position(const TwoVector& position)
 {
 	this->position = position;
 }
 
-const Vector2& CoinProp::get_position() const
+const TwoVector& CoinProp::get_position() const
 {
 	return position;
 }
 
-const Vector2& CoinProp::get_size() const
+const TwoVector& CoinProp::get_size() const
 {
 	return size;
 }
