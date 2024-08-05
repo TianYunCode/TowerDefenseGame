@@ -6,6 +6,7 @@
 #include "animation.h"
 #include "config_manager.h"
 
+//子弹基类
 class Bullet
 {
 public:
@@ -22,31 +23,31 @@ public:
 	double get_damage() const;
 	double get_damage_range() const;
 
-	void disable_collide();
-	bool can_collide() const;
+	void disable_collide();	  //禁用碰撞
+	bool can_collide() const; //可以碰撞
 
-	void make_invalid();
-	bool can_remove() const;
+	void make_invalid();	 //子弹无效化
+	bool can_remove() const; //是否可以移除子弹
 
 	virtual void on_update(double delta);
 	virtual void on_render(SDL_Renderer* renderer);
 	virtual void on_collide(Enemy* enemy);
 
 protected:
-	TwoVector size;
-	TwoVector velocity;
-	TwoVector position;
+	TwoVector size;		//尺寸
+	TwoVector velocity;	//飞行速度
+	TwoVector position; //位置
 
 	Animation animation;
-	bool can_rotated = false;
+	bool can_rotated = false; //是否可以旋转
 
-	double damage = 0;
-	double damage_range = -1;
+	double damage = 0;		  //伤害
+	double damage_range = -1; //伤害范围
 
 private:
-	bool is_valid = true;
-	bool is_collisional = true;
-	double angle_anim_rotated = 0;
+	bool is_valid = true;		   //当前的子弹是否还有效
+	bool is_collisional = true;	   //子弹是否可以发生碰撞
+	double angle_anim_rotated = 0; //动画旋转角度
 };
 
 #endif

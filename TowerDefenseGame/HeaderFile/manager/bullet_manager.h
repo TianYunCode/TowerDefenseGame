@@ -10,6 +10,7 @@
 
 #include <vector>
 
+//子弹管理器
 class BulletManager : public Manager<BulletManager>
 {
 	friend class Manager<BulletManager>;
@@ -23,6 +24,7 @@ public:
 
 	BulletList& get_bullet_list();
 
+	//射击子弹
 	void fire_bullet(BulletType type, const TwoVector& position, const TwoVector& velocity, double damage);
 
 protected:
@@ -30,7 +32,7 @@ protected:
 	~BulletManager();
 
 private:
-	BulletList bullet_list;
+	BulletList bullet_list; //子弹列表
 };
 
 #endif

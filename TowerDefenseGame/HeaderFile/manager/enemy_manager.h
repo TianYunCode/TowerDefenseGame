@@ -16,6 +16,7 @@
 #include <vector>
 #include <SDL.h>
 
+//敌人管理类
 class EnemyManager : public Manager<EnemyManager>
 {
 	friend class Manager<EnemyManager>;
@@ -27,24 +28,23 @@ public:
 	void on_update(double delta);
 	void on_render(SDL_Renderer* renderer);
 
-	void spawn_enemy(EnemyType type, int idx_spawn_point);
-	bool check_cleared();
+	void spawn_enemy(EnemyType type, int idx_spawn_point); //生成敌人
+	bool check_cleared();								   //判断敌人是否已经被清空
 
 	EnemyManager::EnemyList& get_enemy_list();
 
 protected:
 	EnemyManager() = default;
-
 	~EnemyManager();
 
 private:
-	EnemyList enemy_list;
+	EnemyList enemy_list; //敌人列表
 
 private:
-	void process_home_collision();
-	void process_bullet_collision();
-	void remove_invalid_enemy();
-	void try_spawn_coin_prop(const TwoVector& position, double ratio);
+	void process_home_collision();									   //碰撞到房屋
+	void process_bullet_collision();								   //碰撞到子弹
+	void remove_invalid_enemy();									   //移除无效的敌人
+	void try_spawn_coin_prop(const TwoVector& position, double ratio); //尝试产生硬币道具
 };
 
 #endif

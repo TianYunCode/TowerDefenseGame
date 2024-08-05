@@ -4,7 +4,7 @@
 #include "bullet.h"
 #include "resources_manager.h"
 
-
+//箭类（弓箭手发射的兵器）
 class ArrowBullet : public Bullet
 {
 public:

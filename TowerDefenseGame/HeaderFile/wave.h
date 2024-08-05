@@ -16,8 +16,8 @@ struct Wave
 		EnemyType enemy_type = EnemyType::Slim; //生成的敌人
 	};
 
-	double rawards = 0;						  //波次开始前获得金币数量
-	double interval = 0;					  //上一波次结束后，经过interval秒后本波次开始
+	double rawards = 0;					 //波次开始前获得金币数量
+	double interval = 0;				 //上一波次结束后，经过interval秒后本波次开始
 	vector<SpawnEvent> spawn_event_list; //本波次的敌人列表
 };
 

@@ -4,6 +4,7 @@
 #include "bullet.h"
 #include "resources_manager.h"
 
+//ÅÚµ¯Àà£¨Ç¹ÅÚÊÖ·¢Éä±øÆ÷£©
 class ShellBullet : public Bullet
 {
 public:

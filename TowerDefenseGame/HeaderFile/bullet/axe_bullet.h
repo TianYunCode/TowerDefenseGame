@@ -4,6 +4,7 @@
 #include "bullet.h"
 #include "resources_manager.h"
 
+//斧头类（斧头兵扔出的兵器）
 class AxeBullet : public Bullet
 {
 public:
