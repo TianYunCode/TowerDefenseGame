@@ -120,9 +120,6 @@
     <ClCompile Include="SourceFile\tower\gunner_tower.cpp">
       <Filter>源文件\tower</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFile\tower\timer.cpp">
-      <Filter>源文件\tower</Filter>
-    </ClCompile>
     <ClCompile Include="SourceFile\ui\banner.cpp">
       <Filter>源文件\ui</Filter>
     </ClCompile>
@@ -153,13 +150,16 @@
     <ClCompile Include="SourceFile\route.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFile\tower.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="SourceFile\two_vector.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SourceFile\cJSON.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFile\tower\tower.cpp">
+      <Filter>源文件\tower</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFile\timer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -242,9 +242,6 @@
     <ClInclude Include="HeaderFile\tower\gunner_tower.h">
       <Filter>头文件\tower</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFile\tower\timer.h">
-      <Filter>头文件\tower</Filter>
-    </ClInclude>
     <ClInclude Include="HeaderFile\tower\tower_type.h">
       <Filter>头文件\tower</Filter>
     </ClInclude>
@@ -281,9 +278,6 @@
     <ClInclude Include="HeaderFile\tile.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFile\tower.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="HeaderFile\two_vector.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -291,6 +285,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFile\cJSON.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFile\tower\tower.h">
+      <Filter>头文件\tower</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFile\timer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

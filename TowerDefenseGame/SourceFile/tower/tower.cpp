@@ -15,6 +15,7 @@ Tower::Tower()
 	anim_idle_up.set_interval(0.2);
 	anim_idle_down.set_loop(true);
 	anim_idle_down.set_interval(0.2);
+
 	anim_idle_left.set_loop(true);
 	anim_idle_left.set_interval(0.2);
 	anim_idle_right.set_loop(true);

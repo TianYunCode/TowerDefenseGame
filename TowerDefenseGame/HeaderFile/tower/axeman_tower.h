@@ -4,6 +4,7 @@
 #include "tower.h"
 #include "resources_manager.h"
 
+//¸«Í·±øÀà
 class AxemanTower : public Tower
 {
 public:

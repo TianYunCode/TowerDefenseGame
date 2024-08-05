@@ -159,11 +159,11 @@
     <ClCompile Include="SourceFile\manager\wave_manager.cpp" />
     <ClCompile Include="SourceFile\map.cpp" />
     <ClCompile Include="SourceFile\route.cpp" />
-    <ClCompile Include="SourceFile\tower.cpp" />
+    <ClCompile Include="SourceFile\timer.cpp" />
     <ClCompile Include="SourceFile\tower\archer_tower.cpp" />
     <ClCompile Include="SourceFile\tower\axeman_tower.cpp" />
     <ClCompile Include="SourceFile\tower\gunner_tower.cpp" />
-    <ClCompile Include="SourceFile\tower\timer.cpp" />
+    <ClCompile Include="SourceFile\tower\tower.cpp" />
     <ClCompile Include="SourceFile\ui\banner.cpp" />
     <ClCompile Include="SourceFile\ui\panel\panel.cpp" />
     <ClCompile Include="SourceFile\ui\panel\place_panel.cpp" />
@@ -202,11 +202,11 @@
     <ClInclude Include="HeaderFile\map.h" />
     <ClInclude Include="HeaderFile\route.h" />
     <ClInclude Include="HeaderFile\tile.h" />
-    <ClInclude Include="HeaderFile\tower.h" />
+    <ClInclude Include="HeaderFile\timer.h" />
     <ClInclude Include="HeaderFile\tower\archer_tower.h" />
     <ClInclude Include="HeaderFile\tower\axeman_tower.h" />
     <ClInclude Include="HeaderFile\tower\gunner_tower.h" />
-    <ClInclude Include="HeaderFile\tower\timer.h" />
+    <ClInclude Include="HeaderFile\tower\tower.h" />
     <ClInclude Include="HeaderFile\tower\tower_type.h" />
     <ClInclude Include="HeaderFile\ui\banner.h" />
     <ClInclude Include="HeaderFile\ui\panel\panel.h" />
