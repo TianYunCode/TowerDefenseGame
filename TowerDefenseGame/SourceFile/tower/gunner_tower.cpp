@@ -8,6 +8,7 @@ GunnerTower::GunnerTower()
 	static const vector<int> idx_list_idle_down = { 0, 1 };
 	static const vector<int> idx_list_idle_left = { 12, 13 };
 	static const vector<int> idx_list_idle_right = { 8, 9 };
+
 	static const vector<int> idx_list_fire_up = { 20, 21, 22, 23 };
 	static const vector<int> idx_list_fire_down = { 16, 17, 18, 19 };
 	static const vector<int> idx_list_fire_left = { 28, 29, 30, 31 };

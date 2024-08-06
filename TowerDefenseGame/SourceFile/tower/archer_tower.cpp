@@ -8,6 +8,7 @@ ArcherTower::ArcherTower()
 	static const vector<int> idx_list_idle_down = { 0, 1 };
 	static const vector<int> idx_list_idle_left = { 6, 7 };
 	static const vector<int> idx_list_idle_right = { 9, 10 };
+
 	static const vector<int> idx_list_fire_up = { 15, 16, 17 };
 	static const vector<int> idx_list_fire_down = { 12, 13, 14 };
 	static const vector<int> idx_list_fire_left = { 18, 19, 20 };
